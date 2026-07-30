@@ -3,7 +3,7 @@ using UnityEngine;
 public class ropeController : MonoBehaviour
 {
 	[SerializeField] GameObject rope;
-	int Move = 1000;
+	public int Move = 1000;
 
 	public void Shoot(Vector3 rp)
 	{
