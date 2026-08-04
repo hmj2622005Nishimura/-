@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EneCon : MonoBehaviour
 {
 	[SerializeField] GameObject PlayC;
 	[SerializeField] GameObject Enemy;
 
-	int x;
-	int y;
+	float Xv = 1.0f;
+	float Yv = 1.0f;
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
@@ -16,17 +17,8 @@ public class EneCon : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		float Xv = 1;
-		float Yv = 1;
-		if (PlayC.transform.position.x = Enemy.transform.position.x)
-		{
-			Xv = 2.0f;
-		}
-		if (PlayC.transform.position.y = Enemy.transform.position.y)
-		{
-			Yv = 2.0f;
-		}
-
+		//if()
 		transform.Translate(Xv, Yv, 0);
 	}
 }
+
