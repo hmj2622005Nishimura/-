@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerCon : MonoBehaviour
 {
 	float Xv;
 	float Yv;
+
+	[SerializeField] GameObject Enemy;
 
 	float MoveS = 0.3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,5 +38,13 @@ public class PlayerCon : MonoBehaviour
 		transform.Translate(Xv, Yv, 0);
 		Xv = 0;
 		Yv = 0;
+
+		if(transform.position.x <= Enemy.transform.position.x)
+		{
+			if(transform.position.x >= Enemy.transform.position.x)
+			{
+				SceneManager.LoadScene("GameOver");
+			}
+		}
 	}
 }
