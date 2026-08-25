@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class EneCon : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class EneCon : MonoBehaviour
 
 	float Xv = 0.3f;
 	float Yv = 0f;
-	float DiscoverA = 10.0f;
+	float DiscoverA = 10000000.0f;
 	float MoveSp = 0.2f;
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
@@ -49,6 +50,20 @@ public class EneCon : MonoBehaviour
 			}
 		}
 		transform.Translate(Xv, Yv, 0);
+
+		float GMA = 0.3f;
+		if (PlayC.transform.position.x <= transform.position.x + GMA && PlayC.transform.position.x >= transform.position.x - GMA)
+		{
+			if (PlayC.transform.position.y <= transform.position.y + GMA && PlayC.transform.position.y >= transform.position.y - GMA)
+			{
+				SceneManager.LoadScene("GameOver");
+			}
+		}
+	}
+
+	public void SetPlayC(GameObject playC)
+	{
+		this.PlayC = playC;
 	}
 }
 
